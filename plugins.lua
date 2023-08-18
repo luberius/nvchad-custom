@@ -6,7 +6,7 @@ local plugins = {
         {
           'williamboman/mason-lspconfig.nvim',
           opts = {
-            ensure_installed = {'tsserver'}
+            ensure_installed = { 'tsserver' }
           }
         },
         {
@@ -19,6 +19,7 @@ local plugins = {
     },
     config = function ()
       require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
     end
   },
   {
