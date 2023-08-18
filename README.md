@@ -11,6 +11,6 @@ Customization:
 1. Clone this repo into nvchad custom folder in `~/.config/nvim/lua/custom`
 2. make symlink for ftplugin folder:
    ```
-   ln -s ~/.config/nvim/lua/custom/ftplugin $NVIM_CONFIG_HOME/ftplugin
+   ln -s ~/.config/nvim/lua/custom/ftplugin ~/.config/nvim/ftplugin
    ```
 3. done
