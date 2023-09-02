@@ -9,7 +9,7 @@ M.luberius = {
           vim.cmd.NvimTreeFocus()
         end
       end,
-      desc = "Toggle Explorer Focus",
+      "Toggle Explorer Focus"
     }
   }
 }
