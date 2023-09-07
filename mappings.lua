@@ -10,7 +10,14 @@ M.luberius = {
         end
       end,
       "Toggle Explorer Focus"
-    }
-  }
+    },
+    ["gr"] = {
+      function()
+        require('telescope.builtin').lsp_references()
+      end,
+      "LSP references",
+    },
+    ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit" },
+  },
 }
 return M

@@ -27,6 +27,13 @@ local plugins = {
     opts = function()
       return require "custom.configs.nvimtree"
     end,
-  }
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+    lazy = false
+  },
 }
 return plugins
