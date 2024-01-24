@@ -1,26 +1,26 @@
 local plugins = {
   {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     dependencies = {
       {
         {
-          'williamboman/mason-lspconfig.nvim',
+          "williamboman/mason-lspconfig.nvim",
           opts = {
-            ensure_installed = { 'tsserver', 'gopls', 'templ' }
-          }
+            ensure_installed = { "tsserver", "gopls", "templ", "html" },
+          },
         },
         {
           "mhartington/formatter.nvim",
-           config = function()
-             require "custom.configs.formatter"
-           end,
-        }
-      }
+          config = function()
+            require "custom.configs.formatter"
+          end,
+        },
+      },
     },
-    config = function ()
+    config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end
+    end,
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -31,9 +31,9 @@ local plugins = {
   {
     "kdheepak/lazygit.nvim",
     dependencies = {
-        "nvim-lua/plenary.nvim",
+      "nvim-lua/plenary.nvim",
     },
-    lazy = false
+    lazy = false,
   },
 }
 return plugins

@@ -1,9 +1,9 @@
-local configs = require("plugins.configs.lspconfig")
+local configs = require "plugins.configs.lspconfig"
 local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver", 'templ'}
+local servers = { "html", "cssls", "tsserver", "templ", "gopls" }
 
 for _, lsp in ipairs(servers) do
   local config = {

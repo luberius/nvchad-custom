@@ -5,5 +5,20 @@ require("formatter").setup {
     lua = {
       require("formatter.filetypes.lua").stylua,
     },
-  }
+    typescript = {
+      require("formatter.filetypes.typescript").prettier,
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettier,
+    },
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
+    javascriptreact = {
+      require("formatter.filetypes.javascriptreact").prettier,
+    },
+    go = {
+      require("formatter.filetypes.go").gofumpt,
+    },
+  },
 }
