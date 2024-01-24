@@ -9,13 +9,19 @@ M.luberius = {
           vim.cmd.NvimTreeFocus()
         end
       end,
-      "Toggle Explorer Focus"
+      "Toggle Explorer Focus",
     },
     ["gr"] = {
       function()
-        require('telescope.builtin').lsp_references()
+        require("telescope.builtin").lsp_references()
       end,
       "LSP references",
+    },
+    ["gd"] = {
+      function()
+        require("telescope.builtin").lsp_definitions()
+      end,
+      "LSP definitions",
     },
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit" },
   },

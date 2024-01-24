@@ -6,13 +6,13 @@ local plugins = {
         {
           'williamboman/mason-lspconfig.nvim',
           opts = {
-            ensure_installed = { 'tsserver' }
+            ensure_installed = { 'tsserver', 'gopls', 'templ' }
           }
         },
         {
-          "jose-elias-alvarez/null-ls.nvim",
+          "mhartington/formatter.nvim",
            config = function()
-             require "custom.configs.null-ls"
+             require "custom.configs.formatter"
            end,
         }
       }

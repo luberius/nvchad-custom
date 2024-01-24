@@ -3,11 +3,17 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver"}
+local servers = { "html", "cssls", "tsserver", 'templ'}
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  local config = {
     on_attach = on_attach,
     capabilities = capabilities,
   }
+
+  if lsp == "html" then
+    config.filetypes = { "html", "templ" }
+  end
+
+  lspconfig[lsp].setup(config)
 end
