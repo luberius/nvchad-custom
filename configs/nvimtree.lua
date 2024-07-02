@@ -2,6 +2,7 @@ local options = {
   filters = {
     dotfiles = false,
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+    custom = { "/.*templ\\.go$", "/.*templ\\.txt$" },
   },
   disable_netrw = true,
   hijack_netrw = true,
