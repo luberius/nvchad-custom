@@ -35,5 +35,8 @@ local plugins = {
     },
     lazy = false,
   },
+  {
+    "ziglang/zig.vim",
+  },
 }
 return plugins
