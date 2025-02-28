@@ -6,10 +6,6 @@ autocmd("BufWritePost", {
   command = ":FormatWrite",
 })
 
--- Get npm global root directory
-local npm_root = vim.fn.system("npm root -g"):gsub("\n", "")
-local prettier_php_plugin = npm_root .. "/@prettier/plugin-php/src/index.mjs"
-
 -- templ format
 local function format_templ(bufnr, filename)
   local cmd = "templ fmt " .. vim.fn.shellescape(filename)
@@ -23,30 +19,22 @@ local function format_templ(bufnr, filename)
 end
 
 local function format_php(bufnr, filename)
-  local html_cmd = {
-    "prettier",
-    "--write",
-    "--parser=html",
-    filename,
-  }
+  local config_dir = vim.fn.stdpath "config"
 
   local cmd = {
-    "prettier",
-    "--write",
-    "--parser=php",
-    "--plugin=" .. prettier_php_plugin,
+    "php",
+    config_dir .. "/lua/custom/bin/phpcbf.phar",
+    "--standard=PSR12",
     filename,
   }
 
-  vim.fn.jobstart(html_cmd, {
+  vim.notify(table.concat(cmd, " "))
+
+  vim.fn.jobstart(cmd, {
     on_exit = function()
-      vim.fn.jobstart(cmd, {
-        on_exit = function()
-          if vim.api.nvim_get_current_buf() == bufnr then
-            vim.cmd "e!"
-          end
-        end,
-      })
+      if vim.api.nvim_get_current_buf() == bufnr then
+        vim.cmd "e!"
+      end
     end,
   })
 end

@@ -6,7 +6,7 @@ local plugins = {
         {
           "williamboman/mason-lspconfig.nvim",
           opts = {
-            ensure_installed = { "tsserver", "gopls", "templ", "html" },
+            ensure_installed = { "gopls", "templ", "html" },
           },
         },
         {
