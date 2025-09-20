@@ -7,6 +7,7 @@ local M = {}
 
 M.base46 = {
   theme = "monochrome",
+  theme_toggle = { "gruvbox_light", "monochrome" },
 
   -- hl_override = {
   -- 	Comment = { italic = true },
