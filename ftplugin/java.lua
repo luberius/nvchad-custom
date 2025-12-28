@@ -1,5 +1,2 @@
-local config = {
-  cmd = { "/Users/syahril/.local/share/nvim/mason/bin/jdtls" },
-  root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-}
-require("jdtls").start_or_attach(config)
+vim.opt_local.shiftwidth = 4
+vim.opt_local.tabstop = 4
