@@ -40,6 +40,11 @@ local function format_php(bufnr, filename)
 end
 
 -- Combined format function
+local function format_java()
+  require("jdtls").organize_imports()
+  vim.lsp.buf.format { async = false }
+end
+
 local function format_file()
   local bufnr = vim.api.nvim_get_current_buf()
   local filename = vim.api.nvim_buf_get_name(bufnr)
@@ -48,14 +53,13 @@ local function format_file()
     format_templ(bufnr, filename)
   elseif filetype == "php" then
     format_php(bufnr, filename)
-  else
-    vim.lsp.buf.format()
+  elseif filetype == "java" then
+    format_java()
   end
 end
 
--- Single autocommand for both Templ and PHP files
 autocmd("BufWritePre", {
   group = "__formatter__",
-  pattern = { "*.templ", "*.php" },
+  pattern = { "*.templ", "*.php", "*.java" },
   callback = format_file,
 })

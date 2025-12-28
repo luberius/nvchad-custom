@@ -5,7 +5,7 @@ return {
       {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-          ensure_installed = { "gopls", "templ", "html" },
+          ensure_installed = { "gopls", "templ", "html", "biome", "ts_ls", "jdtls" },
         },
       },
       {
